@@ -1,1 +1,85 @@
-<!-- code goes here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/admin.css">
+    <title>Travel Buddy</title>
+</head>
+<body>
+    <br><br>
+    <h1 style="text-align: center; color: blue; font-family: 'segoe ui black';">Welc<span style="font-size: 22px;">😊</span>me Admin....</h1>
+    <div id="container">
+        <div id="left">
+            <h2>Add New Place</h2>
+            <input type="text" placeholder="Enter Image Link"><br>
+            <input type="text" placeholder="Enter Place Name"><br>
+            <input type="text" placeholder="Enter Price"><br>
+            <input type="number" placeholder="Enter Rating"><br>
+            <button>ADD PLACE</button>
+            <hr>
+            <h2>Update All fields of Place</h2>
+            <input type="number" placeholder="Enter id"><br>
+            <input type="text" placeholder="Enter New Image Link"><br>
+            <input type="text" placeholder="Enter New Place Name"><br>
+            <input type="text" placeholder="Enter New Price"><br>
+            <input type="number" placeholder="Enter New Rating"><br>
+            <button>UPDATE PLACE</button>
+            <hr>
+            <h2>Update Only Price or Rating</h2>
+            <input type="number" placeholder="Enter id"><br>
+            <input type="text" placeholder="Enter New Price"><br>
+            <input type="number" placeholder="Enter New Rating"><br>
+            <button>CLICK TO UPDATE</button>
+            <hr>
+            <h2>Sort based on Price</h2>
+            <button>LOW TO HIGH</button><br>
+            <button>HIGH TO LOW</button>
+            <hr>
+            <h2>Fetch Data</h2>
+            <button>FETCH LUCKNOW DATA</button><br>
+            <button>FETCH DUBAI DATA</button>
+        </div>
+        <div id="right">
+            <input placeholder="Search by Name" type="text" id="searching"><input id="search" type="submit">
+
+            <div id="box">
+                <div id="card-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Hawa_Mahal_east_facade_%2814-07-2022%29.jpg" alt="">
+                </div>
+                <div id="card-body">
+                    <h3>Jaipur Hawa Mahal</h3>
+                    <p>$500/Person</p>
+                    <p>4.0⭐</p>
+                    <button id="edit">Edit</button><button id="delete">Delete</button>
+                </div>
+            </div>
+            <div id="box">
+                <div id="card-img">
+                    <img src="https://media.istockphoto.com/id/183342824/photo/stylized-aerial-view-of-dubai-city.jpg?s=612x612&w=0&k=20&c=outZOT9DOF6lRhp9S6pXY-FHVt1_9yW3e4ToE2-S1N0=" alt="">
+                </div>
+                <div id="card-body">
+                    <h3>Dubai Burj Khalifa</h3>
+                    <p>$1000/Person</p>
+                    <p>4.5⭐</p>
+                    <button id="edit">Edit</button><button id="delete">Delete</button>
+                </div>
+            </div>
+            <div id="box">
+                <div id="card-img">
+                    <img src="https://media.istockphoto.com/id/472957466/photo/burj-al-arab-hotel-and-a-marina-dubai.jpg?s=612x612&w=0&k=20&c=fWyV5YhEMqF0dfTQcoRR3xwhOFvls7n_pof73qKpiWI=" alt="">
+                </div>
+                <div id="card-body">
+                    <h3>Dubai Burj al arab</h3>
+                    <p>$1500/Person</p>
+                    <p>5.0⭐</p>
+                    <button id="edit">Edit</button><button id="delete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+</body>
+<script src="./Script/admin.js"></script>
+</html>

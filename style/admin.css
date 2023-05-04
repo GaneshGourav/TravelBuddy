@@ -1,0 +1,226 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    background-image: linear-gradient(to right, #60efff, #edf3f5 , #60efff);
+}
+
+#container{
+    width: 85%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+}
+
+#left{
+    border: 1px solid rgb(134, 134, 134);
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 35%;
+    text-align: center;
+    font-family: 'dubai medium';
+    border-radius: 5px;
+}
+
+#left h2{
+    color: black;
+    text-shadow: 1px 1px 2px rgb(206, 206, 206);
+}
+
+#left input{
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(161, 161, 161);
+}
+
+#left button{
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #0061ff , #60efff);
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-weight: bold;
+}
+
+#left button:hover{
+    color: white;
+}
+
+#right{
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 65%;
+    text-align: center;
+    font-family: 'dubai medium';
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+
+#searching{
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid black;
+}
+
+#search{
+    padding: 10px;
+    width: 80px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+    background-image: linear-gradient(to right, #0061ff , #60efff);
+    border: 1px solid black;
+    font-weight: bold;
+    color: white;
+}
+
+#right button:hover{
+    color: black;
+}
+
+#box{
+    width: 90%;
+    border: 1px solid black;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#card-img{
+    width: 40%;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#card-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#card-body{
+    width: 60%;
+    text-align: left;
+    padding-left: 30px;
+    background-color: rgb(196, 251, 255);
+    border-radius: 0px 10px 10px 0px;
+    padding-bottom: 5px;
+}
+
+#edit{
+    background-color: green;
+    color: white;
+    border: 1px solid black;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#delete{
+    background-color: red;
+    color: white;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media all and (max-width:1105px){
+    #left input{
+        width: 200px;
+    }
+    #left button{
+        width: 200px;
+    }
+}
+
+@media all and (max-width:785px){
+    #searching{
+        width: 200px;
+    }
+}
+
+@media all and (max-width:770px){
+    #container{
+        flex-direction: column;
+    }
+    #left{
+        width: 100%;
+    }
+    #right{
+        width: 100%;
+    }
+    #left input{
+        width: 500px;
+    }
+    #left button{
+        width: 500px;
+    }
+    #searching{
+        width: 420px;
+    }
+}
+
+@media all and (max-width:625px){
+    #left input{
+        width: 300px;
+    }
+    #left button{
+        width: 300px;
+    }
+    #searching{
+        width: 220px;
+    }
+}
+
+@media all and (max-width:500px){
+    
+    #box{
+        flex-direction: column;
+        
+    }
+    #card-img{
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+    }
+    #card-img img{
+        border-radius: 10px 10px 0px 0px;
+    }
+    #card-body{
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+@media all and (max-width:395px){
+    #container{
+        width: 90%;
+    }
+    #left input{
+        width: 200px;
+    }
+    #left button{
+        width: 200px;
+    }
+    #searching{
+        width: 150px;
+    }
+    #box{
+        width: 100%;
+    }
+    h1{
+        font-size: 20px;
+    }
+}
