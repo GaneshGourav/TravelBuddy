@@ -23,6 +23,7 @@ body{
     text-align: center;
     font-family: 'dubai medium';
     border-radius: 5px;
+    padding-top: 18px;
 }
 
 #left h2{
@@ -30,12 +31,45 @@ body{
     text-shadow: 1px 1px 2px rgb(206, 206, 206);
 }
 
-#left input{
+#left input,
+#left select{
     padding: 10px;
     width: 300px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid rgb(161, 161, 161);
+}
+
+#left #searching{
+    padding: 10px;
+    width: 220px;
+    margin-bottom: 10px;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid black;
+    margin-top: 0px;
+}
+#left #search_select{
+    margin-bottom: 0px;
+    width: 80px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid black;
+    padding: 9px;
+}
+#search{
+    padding: 10px;
+    width: 80px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+    background-image: linear-gradient(to right, #0061ff , #60efff);
+    border: 1px solid black;
+    font-weight: bold;
+    color: white;
+}
+
+#search:hover{
+    color: black;
+    background-image: linear-gradient(to right, #60efff , #0061ff);
 }
 
 #left button{
@@ -52,6 +86,7 @@ body{
 
 #left button:hover{
     color: white;
+    background-image: linear-gradient(to right, #60efff , #0061ff);
 }
 
 #right{
@@ -60,28 +95,8 @@ body{
     width: 65%;
     text-align: center;
     font-family: 'dubai medium';
-    padding-top: 25px;
+    padding-top: 0px;
     padding-bottom: 30px;
-}
-
-#searching{
-    padding: 10px;
-    width: 300px;
-    margin-bottom: 10px;
-    border-radius: 5px 0px 0px 5px;
-    border: 1px solid black;
-}
-
-#search{
-    padding: 10px;
-    width: 80px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    border-radius: 0px 5px 5px 0px;
-    background-image: linear-gradient(to right, #0061ff , #60efff);
-    border: 1px solid black;
-    font-weight: bold;
-    color: white;
 }
 
 #right button:hover{
@@ -128,6 +143,11 @@ body{
     cursor: pointer;
 }
 
+#edit:hover{
+    background-image: linear-gradient(to right, #2c9b51 , #0fe41a);
+    border: 0px;
+}
+
 #delete{
     background-color: red;
     color: white;
@@ -137,18 +157,30 @@ body{
     cursor: pointer;
 }
 
+#delete:hover{
+    border: 0px;
+    background-image: linear-gradient(to right, #f85c41 , #ff0101);
+}
+
+@media all and (max-width:1150px){
+    #left #searching{
+        width: 150px;
+    }
+}
+
 @media all and (max-width:1105px){
-    #left input{
+    #left input,
+    #left select{
         width: 200px;
     }
     #left button{
         width: 200px;
     }
-}
-
-@media all and (max-width:785px){
-    #searching{
-        width: 200px;
+    #left #searching{
+        width: 130px;
+    }
+    #left #search_select{
+        width: 70px;
     }
 }
 
@@ -162,26 +194,34 @@ body{
     #right{
         width: 100%;
     }
-    #left input{
+    #left input,
+    #left select{
         width: 500px;
     }
     #left button{
         width: 500px;
     }
-    #searching{
-        width: 420px;
+    #left #searching{
+        width: 380px;
+    }
+    #left #search_select{
+        width: 80px;
     }
 }
 
 @media all and (max-width:625px){
-    #left input{
+    #left input,
+    #left select{
         width: 300px;
     }
     #left button{
         width: 300px;
     }
-    #searching{
-        width: 220px;
+    #left #searching{
+        width: 180px;
+    }
+    #left #search_select{
+        width: 80px;
     }
 }
 
@@ -200,7 +240,7 @@ body{
     }
     #card-body{
         width: 100%;
-        border-radius: 10px;
+        border-radius: 0px 0px 10px 10px;
     }
 }
 
@@ -208,19 +248,26 @@ body{
     #container{
         width: 90%;
     }
-    #left input{
+    #left input,
+    #left select{
         width: 200px;
+    }
+    #left #searching{
+        width: 120px;
+    }
+    #left #search_select{
+        width: 70px;
     }
     #left button{
         width: 200px;
-    }
-    #searching{
-        width: 150px;
     }
     #box{
         width: 100%;
     }
     h1{
         font-size: 20px;
+    }
+    #card-body{
+        padding-left: 15px;
     }
 }
