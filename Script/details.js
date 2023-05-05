@@ -5,41 +5,35 @@ let slideImg2 = document.getElementById("slideImg2");
 let container = document.getElementById("container");
 
 let images1 = [
-    "https://c4.wallpaperflare.com/wallpaper/107/645/240/luxury-water-bungalows-maldives-wallpaper-preview.jpg",
+    "https://www.thomascook.in/images/home-page-banners/2023/mar/Vietnam-Banner-1920x545.jpg",
+    "https://resources.thomascook.in/images/holidays/PKG011248/photos/MaldivesNautica1500.jpg",
     "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=600",
-    "https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=600",
-    "https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg?auto=compress&cs=tinysrgb&w=600"
-    ]
-let images2 = [
+    "https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg?auto=compress&cs=tinysrgb&w=600",
     "https://wallpapercave.com/dwp1x/wp4088743.jpg",
-    "https://images.pexels.com/photos/1287452/pexels-photo-1287452.jpeg?auto=compress&cs=tinysrgb&w=600",
     "https://images.pexels.com/photos/221455/pexels-photo-221455.jpeg?auto=compress&cs=tinysrgb&w=600",
-    "https://images.pexels.com/photos/3601453/pexels-photo-3601453.jpeg?auto=compress&cs=tinysrgb&w=600"
-]
+    "https://images.pexels.com/photos/3601453/pexels-photo-3601453.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://resources.thomascook.in/images/holidays/PKG010445/photos/Gangehi_1500.jpg",
+    ]
+    
 let count1 = 0
-let count2 = 0
-// slideImg.src = images[count]
 setInterval(() => {
     slideImg1.src = images1[count1]
-    slideImg2.src = images2[count2]
     count1++
-    count2++
-    if(count1==images1.length && count2==images2.length){
+    if(count1==images1.length){
         count1 = 0;
-        count2 = 0;
     }
 }, 2000)
 
-
+let travelData = []
 fetchData()
 
 function fetchData(){
-  fetch("")
+  fetch("https://projectnewapi.onrender.com/lucknow")
   .then(res => res.json())
   .then((data)=>{
     console.log(data)
-    booksData = data;
-    appendData();
+    travelData = data;
+    appendData(data);
   })
   .catch((error)=>{
     console.log(error)
@@ -76,42 +70,50 @@ function createCard(item){
   let bodyDiv = document.createElement("div");
   bodyDiv.className = "card-body";
 
-  let h4 = document.createElement("h4");
-  h4.className = "card-title";
-  h4.textContent = item.title;
+  let centerDiv = document.createElement("div");
+  centerDiv.className = "center-div";
+
+  let h3 = document.createElement("h4");
+  h3.className = "card-name";
+  h3.textContent = item.name;
 
   let p1 = document.createElement("p");
-  p1.className = "card-location" ;
-  p1.textContent = item.location;
+  p1.className = "card-rating" ;
+  p1.textContent = `Customers Rating : ${item.rating} ⭐`;
 
   let p2 = document.createElement("p");
   p2.className = "card-category" ;
-  p2.textContent = item.category;
+  p2.textContent = "Every Maldives tour allows you the freedom, flexibility, refreshed and energized.";
 
   let p3 = document.createElement("p");
   p3.className = "card-price" ;
-  p3.textContent = item.price;
+  p3.textContent = `$ ${item.price} / Person`;
+  p3.style.fontWeight = "bold"
 
-  let a = document.createElement("a");
-  a.className = "card-link";
-  a.setAttribute("data-id",item.id);
-  a.href = "#";
-  a.textContent = "Proceed";
-  
+  let p4 = document.createElement("p");
+  p4.textContent = `${item.name.length}Days/${item.name.length-1} Nights`
+  p4.style.color = 'gray'
+
   let btn = document.createElement("button");
   btn.setAttribute("data-id",item.id);
   btn.className = "card-button" ;
-  btn.textContent = "Details";
+  btn.textContent = "Proceed";
 
   // let id = item.id
   btn.addEventListener("click",()=>{
-    
-    
+    window.location.href = "payment.html";
   })
 
-  bodyDiv.append(h4,p1,p2,p3,a,btn);
+  centerDiv.append(h3,p2,p4)
+  bodyDiv.append(p1,p3,btn);
 
-  card.append(imgDiv,bodyDiv);
+  card.append(imgDiv,centerDiv,bodyDiv);
 
   return card;
 }
+
+
+// var video = document.getElementById("video");
+//     video.addEventListener('canplaythrough', function() {
+//         video.play();
+//     });
