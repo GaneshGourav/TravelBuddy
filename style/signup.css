@@ -228,8 +228,8 @@
     }
     
     @media(max-width: 575.98px) {
-        .container {
-            flex-direction: column;
+        .overlay-container {
+            flex-direction: row;
             box-shadow: none;
         }
     }
