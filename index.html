@@ -12,11 +12,15 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="./style/index.css">
+
     <title></title>
 
 </head>
 
-<style>
+<!-- <style>
 
     body {
 
@@ -342,7 +346,555 @@ border: 1px solid red;
 
 }
 
-</style>
+#text4 {
+
+padding-top: 50px;
+
+text-align: center;
+
+font-weight: bold;
+
+}
+
+
+
+/*
+
+#in {
+
+display: flex;
+
+
+
+} */
+
+
+
+#in button {
+
+width: 100px;
+
+height: 25px;
+
+}
+
+
+
+#cardimg img {
+
+width: 100%;
+
+}
+
+
+
+#c {
+
+display: grid;
+
+grid-template-columns: repeat(3, 1fr);
+
+gap: 10px;
+
+padding-left: 100px;
+
+/* justify-content: center;
+
+align-items: center; */
+
+}
+
+
+
+#cardimg {
+
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+width: 80%;
+
+}
+
+
+
+#cardimg h2 {
+
+text-align: center;
+
+}
+
+
+
+#cardimg h3 {
+
+text-align: center;
+
+}
+
+
+
+#in button {
+
+background-color: rgb(20, 208, 241);
+
+border: rgb(20, 208, 241);
+
+border-radius: 20px;
+
+margin-left: 140px;
+
+}
+
+
+
+#sixth img {
+
+width: 100%;
+
+height: 500px;
+
+
+
+}
+
+
+
+#sixth {
+
+margin-top: 60px;
+
+}
+
+
+
+#text5 {
+
+text-align: center;
+
+font-weight: bold;
+
+font-size: 25px;
+
+}
+
+
+
+#input {
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+gap: 70px;
+
+margin-top: 60px;
+
+}
+
+
+
+#mail {
+
+width: 300px;
+
+/* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+
+border: 1px solid white;
+
+}
+
+
+
+#number {
+
+width: 300px;
+
+/* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+
+border: 1px solid white;
+
+}
+
+
+
+#mess {
+
+padding-top: 50px;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+padding-bottom: 50px;
+
+}
+
+
+
+#message {
+
+width: 680px;
+
+/* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+
+border: 1px solid white;
+
+}
+
+
+
+#eight button {
+
+
+
+background-color: rgb(20, 208, 241);
+
+/* border: rgb(20, 208, 241); */
+
+border-radius: 20px;
+
+width: 100px;
+
+padding-left: 30px;
+
+/* padding-top: 5px; */
+
+margin: auto;
+
+display: flex;
+
+color: white;
+
+height: 25px;
+
+font-size: 20px;
+
+}
+
+#eight input{
+    border-bottom: 1px solid rgb(153, 128, 128);
+}
+
+
+
+#nine img {
+
+width: 20%;
+
+}
+
+
+
+#nine {
+
+padding-left: 150px;
+
+background-color: rgb(160, 229, 229);
+
+margin-top: 50px;
+
+height: 200px;
+
+}
+
+
+
+#nine p {
+
+font-size: 25px;
+
+
+
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background: #EEECEB;
+}
+
+footer {
+    /* position: fixed; */
+    /* background: #140B5C; */
+    background-image: linear-gradient(to right, #0061ff, #60efff);
+    width: 100%;
+    /* bottom: 0; */
+    left: 0;
+    margin-top: 10px;
+}
+
+/* footer::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100px;
+    height: 1px;
+    width: 100%;
+    background: #AFAFB6;
+} */
+
+footer .content {
+    max-width: 1250px;
+    margin: auto;
+    padding: 30px 40px 40px 40px;
+}
+
+footer .content .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.content .top .logo-details {
+    color: #fff;
+    font-size: 30px;
+}
+
+.content .top .media-icons {
+    display: flex;
+}
+
+.content .top .media-icons a {
+    height: 40px;
+    width: 40px;
+    margin: 0 8px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.top .media-icons a:nth-child(1) {
+    background: #4267B2;
+}
+
+.top .media-icons a:nth-child(1):hover {
+    color: #4267B2;
+    background: #fff;
+}
+
+.top .media-icons a:nth-child(2) {
+    background: #1DA1F2;
+}
+
+.top .media-icons a:nth-child(2):hover {
+    color: #1DA1F2;
+    background: #fff;
+}
+
+.top .media-icons a:nth-child(3) {
+    background: #E1306C;
+}
+
+.top .media-icons a:nth-child(3):hover {
+    color: #E1306C;
+    background: #fff;
+}
+
+.top .media-icons a:nth-child(4) {
+    background: #0077B5;
+}
+
+.top .media-icons a:nth-child(4):hover {
+    color: #0077B5;
+    background: #fff;
+}
+
+.top .media-icons a:nth-child(5) {
+    background: #FF0000;
+}
+
+.top .media-icons a:nth-child(5):hover {
+    color: #FF0000;
+    background: #fff;
+}
+
+footer .content .link-boxes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .content .link-boxes .box {
+    width: calc(100% / 5 - 10px);
+}
+
+.content .link-boxes .box .link_name {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.link-boxes .box .link_name::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 35px;
+    background: #fff;
+}
+
+.content .link-boxes .box li {
+    margin: 6px 0;
+    list-style: none;
+}
+
+.content .link-boxes .box li a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.4s ease
+}
+
+.content .link-boxes .box li a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.content .link-boxes .input-box {
+    margin-right: 55px;
+}
+
+.link-boxes .input-box input {
+    height: 40px;
+    width: calc(100% + 55px);
+    outline: none;
+    border: 2px solid #AFAFB6;
+    background: #140B5C;
+    border-radius: 4px;
+    padding: 0 15px;
+    font-size: 15px;
+    color: #fff;
+    margin-top: 5px;
+}
+
+.link-boxes .input-box input::placeholder {
+    color: #AFAFB6;
+    font-size: 16px;
+}
+
+.link-boxes .input-box input[type="button"] {
+    background: #fff;
+    color: #140B5C;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 4px 0;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.input-box input[type="button"]:hover {
+    opacity: 1;
+}
+
+footer .bottom-details {
+    width: 100%;
+    background: #0F0844;
+}
+
+footer .bottom-details .bottom_text {
+    max-width: 1250px;
+    margin: auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a {
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+.bottom-details .bottom_text a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.bottom-details .bottom_text a {
+    margin-right: 10px;
+}
+
+@media (max-width: 900px) {
+    footer .content .link-boxes {
+        flex-wrap: wrap;
+    }
+    footer .content .link-boxes .input-box {
+        width: 40%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+    footer {
+        position: relative;
+    }
+    .content .top .logo-details {
+        font-size: 26px;
+    }
+    .content .top .media-icons a {
+        height: 35px;
+        width: 35px;
+        font-size: 14px;
+        line-height: 35px;
+    }
+    footer .content .link-boxes .box {
+        width: calc(100% / 3 - 10px);
+    }
+    footer .content .link-boxes .input-box {
+        width: 60%;
+    }
+    .bottom-details .bottom_text span,
+    .bottom-details .bottom_text a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 520px) {
+    footer::before {
+        top: 145px;
+    }
+    footer .content .top {
+        flex-direction: column;
+    }
+    .content .top .media-icons {
+        margin-top: 16px;
+    }
+    footer .content .link-boxes .box {
+        width: calc(100% / 2 - 10px);
+    }
+    footer .content .link-boxes .input-box {
+        width: 100%;
+    }
+}
+
+</style> -->
 
  
 
@@ -504,6 +1056,269 @@ border: 1px solid red;
                 <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117925.35231273035!2d88.26495100072154!3d22.535406374533046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1683288629835!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
 
             </div>
+
+
+            <div id="fifth">
+
+                <div id="text4">
+
+                    <h1>Find Popular Destinations</h1>
+
+                    <p>Escape the ordinary and explore the extraordinary-with our handpicked selection of destinations
+
+                        and travel deals,<br>you'll be able to create the trip of your dreams.</p>
+
+                </div>
+
+                <div id="c">
+
+                    <div id="cardimg">
+
+                        <div>
+
+                            <img src="https://www.gannett-cdn.com/media/2023/01/10/USATODAY/usatsports/The-Ritz-Carlton.jpg"
+
+                                alt="">
+
+                            <h2>Magical Maldives</h2>
+
+                            <h3>7N/80</h3>
+
+                            <div id="in">
+
+                                <div>
+
+                                    <h3>starts from</h3>
+
+                                    <h2>$220/person</h2>
+
+                                </div>
+
+                                <div>
+
+                                    <button>Book</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+ 
+
+                    </div>
+
+                    <div id="cardimg">
+
+                        <div>
+
+                            <img src="https://www.premiotravels.com/wp-content/uploads/2017/06/196.jpeg" alt="">
+
+                            <h2>Dazzling Dubai</h2>
+
+                            <h3>7N/80</h3>
+
+                            <div id="in">
+
+                                <div>
+
+                                    <h3>starts from</h3>
+
+                                    <h2>$220/person</h2>
+
+                                </div>
+
+ 
+
+                                <button>Book</button>
+
+ 
+
+                            </div>
+
+                        </div>
+
+ 
+
+                    </div>
+
+                    <div id="cardimg">
+
+                        <div>
+
+                            <img
+
+                                src="https://geringerglobaltravel.com/wp-content/uploads/2015/02/DSCN4900-Hawa-mahal-copy.jpg">
+
+                            <h2>Royal Rajasthan</h2>
+
+                            <h3>7N/80</h3>
+
+                            <div id="in">
+
+                                <div>
+
+                                    <h3>starts from</h3>
+
+                                    <h2>$220/person</h2>
+
+                                </div>
+
+ 
+
+                                <button>Book</button>
+
+ 
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="sixth">
+
+                <div>
+
+                    <img src="https://wallpaperaccess.com/full/1638254.jpg" alt="">
+
+                </div>
+
+            </div>
+
+            <div id="seventh">
+
+                <div id="text5">
+
+                    <h1>Get in touch</h1>
+
+                    <p>Dont wait, reach out to us now and let us help you to plan your next vacation.Our dedicated team
+
+                        is always here to <br>answer your questions and make your travel dreams a reality.</p>
+
+                </div>
+
+            </div>
+
+            <div id="eight">
+
+                <div id="input">
+
+                    <input type="email" name="" id="mail" placeholder="Email">
+
+                    <input type="number" name="" id="number" placeholder="Mobile">
+
+                </div>
+
+                <br>
+
+                <div id="mess">
+
+                    <input type="text" name="" id="message" placeholder="message">
+
+                </div>
+
+                <br>
+
+                <button>Send</button>
+
+            </div>
+
+            <!-- <div id="nine">
+
+                <div>
+
+                    <img src="C:\Users\samal\Pictures\sitelogo.png" alt="">
+
+                    <p>Lorem ipsum dolor sit amet <br> consectetur, adipisicing <br> elit. Aliquam, tempore!</p>
+
+                </div>
+
+                <div>
+
+                    <div id="option">
+
+                        <a href=""></a>
+
+                        <a href=""></a>
+
+                        <a href=""></a>
+
+                    </div>
+
+                </div>
+
+            </div> -->
+
+
+            <footer>
+                <div class="content">
+                    <div class="top">
+                        <div class="logo-details">
+                            <i class="fa fa-plane"></i>
+                            <span class="logo_name">TravelBuddy</span>
+                        </div>
+                        <div class="media-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="link-boxes">
+                        <ul class="box">
+                            <li class="link_name">Company</li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Get started</a></li>
+                        </ul>
+                        <ul class="box">
+                            <li class="link_name">Services</li>
+                            <li><a href="#">Traveling</a></li>
+                            <li><a href="#">Hotel</a></li>
+                            <li><a href="#">Food </a></li>
+                            <li><a href="#">Trip Packages</a></li>
+                        </ul>
+                        <ul class="box">
+                            <li class="link_name">Account</li>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">My account</a></li>
+                            <li><a href="#">Prefrences</a></li>
+                            <li><a href="#">Purchase</a></li>
+                        </ul>
+                        <ul class="box">
+                            <li class="link_name">Admin</li>
+                            <li><a href="#">Login</a></li>
+                            <!-- <li><a href="#">JavaScript</a></li>
+                            <li><a href="#">Photography</a></li>
+                            <li><a href="#">Photoshop</a></li> -->
+                        </ul>
+                        <ul class="box input-box">
+                            <li class="link_name">Subscribe</li>
+                            <li><input type="text" placeholder="Enter your email"></li>
+                            <li><input type="button" value="Subscribe"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bottom-details">
+                    <div class="bottom_text">
+                        <span class="copyright_text">Copyright &#169; 2023 <a href="#">TravelBuddy.</a>All rights reserved</span>
+                        <span class="policy_terms">
+                  <a href="#">Privacy policy</a>
+                  <a href="#">Terms & condition</a>
+                </span>
+                    </div>
+                </div>
+            </footer>
+
+
+
 
 
 
