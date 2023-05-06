@@ -19,9 +19,9 @@ let email = document.getElementById("useremail");
 let password = document.getElementById("userpassword")
 let form = document.getElementById("createform");
 
-let signupdata = localStorage.getItem("signup") || null;
+let signupdata = JSON.parse(localStorage.getItem("signup")) || [];
 
-
+checking(signupdata)
 form.addEventListener("submit", (e) => {
     e.preventDefault()
     let userdata = {
@@ -29,7 +29,7 @@ form.addEventListener("submit", (e) => {
         email: email.value,
         password: password.value
     }
-    signupdata = userdata;
+    signupdata.push(userdata);
     localStorage.setItem("signup", JSON.stringify(signupdata));
 
     console.log(userdata);
@@ -42,12 +42,36 @@ form.addEventListener("submit", (e) => {
 let loginmail = document.getElementById("loginemail");
 let loginpass = document.getElementById("loginpass");
 let loginbtn = document.getElementById("signin");
-loginbtn.addEventListener("submit", () => {
-    let signupdata = localStorage.getItem("signup") || null;
-    signupdata.forEach(element => {
+loginbtn.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (checking()) {
 
-        console.log(element)
-    });
+        alert("login successful")
+    } else {
+        alert("login failed")
+
+    }
+
+
 
 
 })
+
+
+
+
+
+function checking(signupdata) {
+    // let signupdata = localStorage.getItem("signup") || [];
+
+    signupdata.forEach(element => {
+        // if (element.email === loginmail.value && element.password === loginpass.value) {
+        //     return true
+        // }
+        console.log(element)
+
+    });
+
+    // return false
+
+}
