@@ -4,6 +4,17 @@ let slideImg2 = document.getElementById("slideImg2");
 
 let container = document.getElementById("container");
 
+//sort and filter
+let sortAtoZBtn = document.getElementById("sortAsc");
+let sortZtoABtn = document.getElementById("sortDsc");
+
+let sortAsc = document.getElementById("sortasc");
+let sortDsc = document.getElementById("sortdsc");
+
+let places = document.querySelector(".Places");
+
+let bookingItem = JSON.parse(localStorage.getItem("booking-item")) || []
+
 let images1 = [
     "https://www.thomascook.in/images/home-page-banners/2023/mar/Vietnam-Banner-1920x545.jpg",
     "https://resources.thomascook.in/images/holidays/PKG011248/photos/MaldivesNautica1500.jpg",
@@ -34,6 +45,7 @@ function fetchData(){
     console.log(data)
     travelData = data;
     appendData(data);
+    createList(data)
   })
   .catch((error)=>{
     console.log(error)
@@ -42,6 +54,7 @@ function fetchData(){
 
 function appendData(data){
   container.innerHTML="";
+  places.innerHTML = "";
 
   let cardlist = document.createElement("div");
   cardlist.className = "card-list";
@@ -49,6 +62,7 @@ function appendData(data){
   data.forEach((item) => {
     let card =  createCard(item);
     cardlist.append(card)
+    places.append(createList(item))
   })
   container.append(cardlist);
 }
@@ -82,8 +96,8 @@ function createCard(item){
   p1.textContent = `Customers Rating : ${item.rating} ⭐`;
 
   let p2 = document.createElement("p");
-  p2.className = "card-category" ;
-  p2.textContent = "Every Maldives tour allows you the freedom, flexibility, refreshed and energized.";
+  p2.className = "card-detail" ;
+  p2.textContent = item.detail;
 
   let p3 = document.createElement("p");
   p3.className = "card-price" ;
@@ -91,7 +105,7 @@ function createCard(item){
   p3.style.fontWeight = "bold"
 
   let p4 = document.createElement("p");
-  p4.textContent = `${item.name.length}Days/${item.name.length-1} Nights`
+  p4.textContent = `${Math.floor(item.name.length / 5)}Days/${Math.floor(item.name.length / 5) -1} Nights`
   p4.style.color = 'gray'
 
   let btn = document.createElement("button");
@@ -101,15 +115,30 @@ function createCard(item){
 
   // let id = item.id
   btn.addEventListener("click",()=>{
+    bookingItem.push({...item,quantity:1})
+    localStorage.setItem("booking-item",JSON.stringify(bookingItem))
+
     window.location.href = "payment.html";
   })
+  
+  extraBox = document.createElement("div");
+  extraBox.id = "extraBox"
 
   centerDiv.append(h3,p2,p4)
   bodyDiv.append(p1,p3,btn);
+  extraBox.append(imgDiv,centerDiv)
 
-  card.append(imgDiv,centerDiv,bodyDiv);
+  card.append(extraBox,bodyDiv);
 
   return card;
+}
+
+function createList(item){
+  // let h2 = document.createElement("h2");
+  let list = document.createElement("li");
+  list.textContent = item.name;
+  
+  return list
 }
 
 
@@ -117,3 +146,31 @@ function createCard(item){
 //     video.addEventListener('canplaythrough', function() {
 //         video.play();
 //     });
+
+sortAtoZBtn.addEventListener("click",function(){
+  let ascData = travelData.sort((a,b)=>{
+    return a.price-b.price
+  })
+  appendData(ascData);
+})
+
+sortZtoABtn.addEventListener("click",function(){
+  let desData = travelData.sort((a,b)=>{
+    return b.price-a.price
+  })
+  appendData(desData);
+})
+
+sortAsc.addEventListener("click",function(){
+  let ascData = travelData.sort((a,b)=>{
+    return a.rating-b.rating
+  })
+  appendData(ascData);
+})
+
+sortDsc.addEventListener("click",function(){
+  let desData = travelData.sort((a,b)=>{
+    return b.rating-a.rating
+  })
+  appendData(desData);
+})
