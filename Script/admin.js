@@ -105,6 +105,9 @@ function createcard(ele){
     let rating = document.createElement("p");
     rating.innerText = `${ele.rating}⭐`;
 
+    // let details = document.createElement("p");
+    // details.innerText = ele.detail;
+
     let edit = document.createElement("button");
     edit.id = "edit";
     edit.innerText = "Edit";
