@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <title>Travel Buddy</title>
 </head>
 <body>
@@ -13,20 +14,12 @@
     <div id="box">
         <div id="left">
             <div class="left1">
-                <div id="imgdiv">
-                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/0a/15/13/e5/dubai-aquarium-underwater.jpg"
-                    alt="">
-                </div>
-                <div id="cardbody">
-                    <h2>Dubai Underwater zoo aquarium</h2>
-                    <h3>$990/Person</h3>
-                    <button id="add">+</button><span>1</span><button id="sub">-</button>
-                    <p>Total price is $990</p>
-                </div>
+                <!-- All card should be append here -->
+
             </div>
             <div class="left2">
-                <div><input type="text" placeholder="Enter Your Full Name"><input type="text" placeholder="Enter Your Country Name"></div>
-                <div><input type="number" placeholder="Enter Your Active No."><input type="text" placeholder="Enter Your Gender"></div>
+                <div><input id="name" type="text" placeholder="Enter Your Full Name"><input id="con" type="text" placeholder="Enter Your Country Name"></div>
+                <div><input id="num" type="number" placeholder="Enter Your Active No."><input id="gender" type="text" placeholder="Enter Your Gender"></div>
                 <div><select id="payment">
                     <option value="">Select Payment Method</option>
                     <option value="COD">Cash on Delivery</option>
@@ -38,10 +31,89 @@
             </div>
         </div>
         <div id="right">
-
+            <h3 id="text">BIGGEST OFFERS</h3>
+            <div class="marquee-wrapper">
+                <marquee direction="left" behavior="alternate" scrollamount="11" onmouseover="this.stop();" onmouseout="this.start();">
+                    <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/travel-vacation-pull-up-banner-design-template-6669719934800c3154a14ed7cc882a21_screen.jpg?ts=1637223579" alt="">
+                    <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/travel-agency-roll-up-banner-design-template-9aadeacb48405d9b74b67f27c48202e3_screen.jpg?ts=1649321810" alt="">
+                    <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/travel-agency-ad-template-design-b246a2b85e234ff99d18686a2ed8414d_screen.jpg?ts=1677772825" alt="">
+                    <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/travel-vacation-pull-up-banner-design-template-6669719934800c3154a14ed7cc882a21_screen.jpg?ts=1637223579" alt="">
+                    <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/travel-agency-roll-up-banner-design-template-9aadeacb48405d9b74b67f27c48202e3_screen.jpg?ts=1649321810" alt="">
+                </marquee>
+            </div>
         </div>
+        
     </div>
-    <br><br><br><br><br>
+    <!-- something popup added-->
+    <div class="popup" id="popup">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Eo_circle_light-blue_checkmark.svg/2048px-Eo_circle_light-blue_checkmark.svg.png" alt="">
+        <h2>Thank You!!</h2>
+        <p>Your Package is Successfully booked🎉🎉</p>
+        <button class="ok">OK</button>
+    </div>
+    <!-- popup code here -->
+    <br><br><br>
+    <footer>
+        <div class="content">
+            <div class="top">
+                <div class="logo-details">
+                    <i class="fa fa-plane"></i>
+                    <span class="logo_name">TravelBuddy</span>
+                </div>
+                <div class="media-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="link-boxes">
+                <ul class="box">
+                    <li class="link_name">Company</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Get started</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Services</li>
+                    <li><a href="#">Traveling</a></li>
+                    <li><a href="#">Hotel</a></li>
+                    <li><a href="#">Food </a></li>
+                    <li><a href="#">Trip Packages</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Account</li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">My account</a></li>
+                    <li><a href="#">Prefrences</a></li>
+                    <li><a href="#">Purchase</a></li>
+                </ul>
+                <ul class="box">
+                    <li class="link_name">Admin</li>
+                    <li><a href="#">Login</a></li>
+                    <!-- <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">Photoshop</a></li> -->
+                </ul>
+                <ul class="box input-box">
+                    <li class="link_name">Subscribe</li>
+                    <li><input type="text" placeholder="Enter your email"></li>
+                    <li><input type="button" value="Subscribe"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-details">
+            <div class="bottom_text">
+                <span class="copyright_text">Copyright &#169; 2023 <a href="#">TravelBuddy.</a>All rights reserved</span>
+                <span class="policy_terms">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms & condition</a>
+        </span>
+            </div>
+        </div>
+    </footer>
 
 </body>
 <script src="./Script/payment.js"></script>

@@ -16,12 +16,13 @@ signInButton.addEventListener('click', () => {
 
 let Name = document.getElementById("username")
 let email = document.getElementById("useremail");
-let password = document.getElementById("userpassword")
+let password = document.getElementById("userpassword");
+let cretext = document.getElementById("cretext");
 let form = document.getElementById("createform");
 
 let signupdata = JSON.parse(localStorage.getItem("signup")) || [];
 
-checking(signupdata)
+// checking(signupdata)
 form.addEventListener("submit", (e) => {
     e.preventDefault()
     let userdata = {
@@ -31,47 +32,55 @@ form.addEventListener("submit", (e) => {
     }
     signupdata.push(userdata);
     localStorage.setItem("signup", JSON.stringify(signupdata));
+    cretext.innerText = "Signup Successfull✅"
 
-    console.log(userdata);
-    Name.value = "";
-    email.value = "";
-    password.value = "";
+    setTimeout(() => {
+        cretext.innerText = ""
+    }, 2000);
+
+    form.reset();
 
 });
 
 let loginmail = document.getElementById("loginemail");
 let loginpass = document.getElementById("loginpass");
 let loginbtn = document.getElementById("signin");
+let logtext = document.getElementById("logtext");
+
+
 loginbtn.addEventListener("submit", (e) => {
     e.preventDefault();
     if (checking()) {
-
-        alert("login successful")
+        
+        logtext.innerText = "Login Successfull✅"
+        logtext.style.color = "green";
+        form.reset();
+        
+        setTimeout(() => {
+        logtext.innerText = ""
+        window.location.href = "./index.html"
+    }, 2000);
     } else {
-        alert("login failed")
 
+        logtext.innerText = "Login Unsuccessfull❌"
+        logtext.style.color = "red";
+        
+        setTimeout(() => {
+        logtext.innerText = ""
+    }, 2000);
     }
-
-
-
 
 })
 
-
-
-
-
-function checking(signupdata) {
-    // let signupdata = localStorage.getItem("signup") || [];
-
+function checking() {
+    let flag = false;
     signupdata.forEach(element => {
-        // if (element.email === loginmail.value && element.password === loginpass.value) {
-        //     return true
-        // }
-        console.log(element)
+        if (element.email === loginmail.value && element.password === loginpass.value) {
+            flag=true;
+        }
 
     });
 
-    // return false
+    return flag;
 
 }
