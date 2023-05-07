@@ -39,16 +39,23 @@ let travelData = []
 fetchData()
 
 function fetchData(){
+  let loading = document.createElement("img");
+  loading.id = "Loading";
+  loading.src = "https://myraviprint.xyz/assets/image/loader.gif";
+  container.append(loading);
+
   fetch("https://projectnewapi.onrender.com/lucknow")
   .then(res => res.json())
   .then((data)=>{
     console.log(data)
+    container.removeChild(loading);
     travelData = data;
     appendData(data);
     createList(data)
   })
   .catch((error)=>{
     console.log(error)
+    container.removeChild(loading);
   })
 }
 
@@ -115,6 +122,7 @@ function createCard(item){
 
   // let id = item.id
   btn.addEventListener("click",()=>{
+    bookingItem.pop();
     bookingItem.push({...item,quantity:1})
     localStorage.setItem("booking-item",JSON.stringify(bookingItem))
 

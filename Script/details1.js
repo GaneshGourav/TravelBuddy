@@ -38,6 +38,11 @@ let travelData = []
 fetchData()
 
 function fetchData(){
+  let loading = document.createElement("img");
+  loading.id = "Loading1";
+  loading.src = "https://myraviprint.xyz/assets/image/loader.gif";
+  container.append(loading);
+
   fetch("https://projectnewapi.onrender.com/Dubai")
   .then(res => res.json())
   .then((data)=>{
@@ -114,6 +119,7 @@ function createCard(item){
 
   // let id = item.id
   btn.addEventListener("click",()=>{
+    bookingItem.pop()
     bookingItem.push(item)
     localStorage.setItem("booking-item",JSON.stringify(bookingItem))
 

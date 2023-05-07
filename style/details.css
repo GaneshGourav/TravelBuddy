@@ -3,6 +3,42 @@
     padding: 0px;
     margin: 0px;
 }
+nav {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    background-image: linear-gradient(to right, #d2eefe, #FFFEFF);
+    align-items: center;
+}
+
+nav #right_nav {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-right: 50px;
+}
+
+nav #left_nav {
+    margin-left: 50px;
+}
+
+nav #right_nav a {
+    text-decoration: none;
+}
+
+nav #right_nav p {
+    color: black;
+    transition: transform .2s;
+}
+
+nav #right_nav p:hover {
+    color: blue;
+    -ms-transform: scale(1.2);
+    /* IE 9 */
+    -webkit-transform: scale(1.2);
+    /* Safari 3-8 */
+    transform: scale(1.2);
+}
 body{
     padding: 0px;
     margin: 0px;
@@ -63,6 +99,10 @@ body{
     width: 100%;
     height: 100%;
     border-radius: 10px;
+}
+#container #Loading{
+    width: 20%;
+    margin: auto;
 }
 .card-img{
     width: 40%;
@@ -151,7 +191,7 @@ body{
     /* justify-content: space-between; */
     gap: 5px;
   }
-  @media all and (min-width : 500px) and (max-width : 800px){
+  @media all and (min-width : 551px) and (max-width : 900px){
     .card-body{
       width: 100%;
     }
@@ -161,8 +201,11 @@ body{
     li{
       font-size: 15px;
     }
+    #sorting{
+        flex-direction: column;
+     }
   }
-  @media all and (max-width : 499px){
+  @media all and (max-width : 550px){
     .extraBox{
       flex-direction: column;
     }
@@ -172,11 +215,18 @@ body{
     .card-body{
       width: 100%;
     }
-  }
-  @media all and (max-width : 900px){
-    #sorting{
-       flex-direction: column;
+    #body2{
+        flex-direction: column;
+        align-items: center;
     }
+    li{
+        font-size: 15px;
+    }
+    #sorting{
+        flex-direction: column;
+        /* border: 1px solid red; */
+        margin: auto;
+     }
   }
 
   #sorting{
@@ -232,23 +282,10 @@ body {
 }
 
 footer {
-    /* position: fixed; */
-    /* background: #140B5C; */
-    background-image: linear-gradient(to right, #0061ff, #60efff);
+    background: #00b6e4;
     width: 100%;
-    /* bottom: 0; */
     left: 0;
 }
-
-/* footer::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 100px;
-    height: 1px;
-    width: 100%;
-    background: #AFAFB6;
-} */
 
 footer .content {
     max-width: 1250px;
@@ -343,9 +380,10 @@ footer .content .link-boxes .box {
 .content .link-boxes .box .link_name {
     color: #fff;
     font-size: 18px;
-    font-weight: 400;
+    /* font-weight: 400; */
     margin-bottom: 10px;
     position: relative;
+    font-weight: bold;
 }
 
 .link-boxes .box .link_name::before {
