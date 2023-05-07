@@ -54,17 +54,25 @@ fetchdata();
 
 
 function fetchdata(){
+    let loadingImg = document.createElement("img");
+    loadingImg.src = "https://myraviprint.xyz/assets/image/loader.gif";
+    loadingImg.id = "loading";
+    container.append(loadingImg);
+
+
     fetch(lucknowapi)
     .then(function(res){
         return res.json();
     }).then(function(data){
         console.log(data);
         empdata = data;
+        container.removeChild(loadingImg);
 
         appenddata(data)
 
     }).catch(function(error){
         console.log(error);
+        container.removeChild(loadingImg);
     })
 }
 
@@ -104,9 +112,6 @@ function createcard(ele){
 
     let rating = document.createElement("p");
     rating.innerText = `${ele.rating}⭐`;
-
-    // let details = document.createElement("p");
-    // details.innerText = ele.detail;
 
     let edit = document.createElement("button");
     edit.id = "edit";
