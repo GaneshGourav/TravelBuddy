@@ -15,6 +15,11 @@ let places = document.querySelector(".Places");
 
 let bookingItem = JSON.parse(localStorage.getItem("booking-item")) || []
 
+let logo = document.getElementById("left_nav");
+
+logo.addEventListener("click",()=>{
+  window.location.href = "index.html";
+})
 let images1 = [
     "https://www.thomascook.in/images/home-page-banners/2023/mar/Vietnam-Banner-1920x545.jpg",
     "https://resources.thomascook.in/images/holidays/PKG011248/photos/MaldivesNautica1500.jpg",
