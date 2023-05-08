@@ -2,6 +2,7 @@ let left1 = document.querySelector(".left1");
 let main= document.getElementById("main");
 let box= document.getElementById("box");
 
+let imgis = document.getElementById("imgis");
 let nameis = document.getElementById("name");
 let con = document.getElementById("con");
 let num = document.getElementById("num");
@@ -13,6 +14,10 @@ let popup = document.getElementById("popup");
 let ok = document.querySelector(".ok");
 
 let bookingItem = JSON.parse(localStorage.getItem("booking-item")) || [];
+
+imgis.addEventListener("click",function(){
+    window.location.href = "./index.html";
+})
 
 Display(bookingItem);
 
@@ -108,6 +113,6 @@ ok.addEventListener("click",function(){
 
         setTimeout(() => {
             localStorage.removeItem("booking-item")
-            window.location.href= "./details.html"
+            window.location.href= "./index.html"
         }, 1000);
 })
