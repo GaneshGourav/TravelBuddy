@@ -53,22 +53,22 @@ let empdata = [];
 fetchdata();
 
 
-function fetchdata(){
+function fetchdata() {
     fetch(lucknowapi)
-    .then(function(res){
-        return res.json();
-    }).then(function(data){
-        console.log(data);
-        empdata = data;
+        .then(function(res) {
+            return res.json();
+        }).then(function(data) {
+            console.log(data);
+            empdata = data;
 
-        appenddata(data)
+            appenddata(data)
 
-    }).catch(function(error){
-        console.log(error);
-    })
+        }).catch(function(error) {
+            console.log(error);
+        })
 }
 
-function appenddata(element){
+function appenddata(element) {
     container.innerHTML = "";
 
     element.forEach(element => {
@@ -80,7 +80,7 @@ function appenddata(element){
 
 
 
-function createcard(ele){
+function createcard(ele) {
 
     let div = document.createElement("div");
     div.id = "box";
@@ -96,7 +96,7 @@ function createcard(ele){
     let cardbody = document.createElement("div");
     cardbody.id = "card-body";
 
-    let h3= document.createElement("h3");
+    let h3 = document.createElement("h3");
     h3.innerText = ele.name;
 
     let price = document.createElement("p");
@@ -112,7 +112,7 @@ function createcard(ele){
     edit.id = "edit";
     edit.innerText = "Edit";
 
-    edit.addEventListener("click",function(){
+    edit.addEventListener("click", function() {
         luckid.value = ele.id;
         luckimg.value = ele.image;
         luckname.value = ele.name;
@@ -124,151 +124,151 @@ function createcard(ele){
     del.id = "delete";
     del.innerText = "Delete";
 
-    del.addEventListener("click",function(){
+    del.addEventListener("click", function() {
         deleting(ele.id);
     })
 
-    cardbody.append(h3,price,rating,edit,del);
+    cardbody.append(h3, price, rating, edit, del);
 
-    div.append(imgdiv,cardbody);
+    div.append(imgdiv, cardbody);
 
     return div;
 }
 
-function deleting(id){
-    fetch(`${lucknowapi}/${id}`,{
+function deleting(id) {
+    fetch(`${lucknowapi}/${id}`, {
         method: "DELETE"
 
-    }).then(function(res){
+    }).then(function(res) {
         return res.json();
-    }).then(function(data){
+    }).then(function(data) {
         fetchdata();
 
-    }).catch(function(error){
+    }).catch(function(error) {
         console.log(error);
     })
 }
 
-search.addEventListener("click",function(){
-    if(search_select.value==="https://projectnewapi.onrender.com/lucknow"){
-        fetch(`${search_select.value}?name_like=${searching.value}`,{
+search.addEventListener("click", function() {
+    if (search_select.value === "https://projectnewapi.onrender.com/lucknow") {
+        fetch(`${search_select.value}?name_like=${searching.value}`, {
             method: "GET"
 
-        }).then(function(res){
+        }).then(function(res) {
             return res.json();
-        }).then(function(data){
+        }).then(function(data) {
             appenddata(data);
 
-        }).catch(function(error){
+        }).catch(function(error) {
             console.log(error);
         })
-    }else if(search_select.value==="https://projectnewapi.onrender.com/dubai"){
-        fetch(`${search_select.value}?name_like=${searching.value}`,{
+    } else if (search_select.value === "https://projectnewapi.onrender.com/dubai") {
+        fetch(`${search_select.value}?name_like=${searching.value}`, {
             method: "GET"
 
-        }).then(function(res){
+        }).then(function(res) {
             return res.json();
-        }).then(function(data){
+        }).then(function(data) {
             appendubai(data);
 
-        }).catch(function(error){
+        }).catch(function(error) {
             console.log(error);
         })
-    }else{
+    } else {
         fetchdata();
     }
 })
 
-addbutton.addEventListener("click",function(){
-    if(url.value==="https://projectnewapi.onrender.com/lucknow"){
+addbutton.addEventListener("click", function() {
+    if (url.value === "https://projectnewapi.onrender.com/lucknow") {
 
-    fetch(url.value,{
-        method: "POST",
-        headers: {
-            "Content-type":"application/json"
-        },
-        body: JSON.stringify({
-            image: addimg.value,
-            name: addname.value,
-            price: addprice.value,
-            rating: addrating.value
-        })
-    })
-    .then(function(res){
-        
-        return res.json();
-    })
-    .then(function(data){
-        
-        fetchdata();
-        url.value = "";
-        addimg.value = "";
-        addname.value = "";
-        addprice.value = "";
-        addrating.value = "";
-        addtext.innerText = "😊Added Successfully!!";
+        fetch(url.value, {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    image: addimg.value,
+                    name: addname.value,
+                    price: addprice.value,
+                    rating: addrating.value
+                })
+            })
+            .then(function(res) {
+
+                return res.json();
+            })
+            .then(function(data) {
+
+                fetchdata();
+                url.value = "";
+                addimg.value = "";
+                addname.value = "";
+                addprice.value = "";
+                addrating.value = "";
+                addtext.innerText = "😊Added Successfully!!";
+
+                setTimeout(() => {
+                    addtext.innerText = "";
+                }, 3000);
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
+
+    } else if (url.value === "https://projectnewapi.onrender.com/dubai") {
+        //dubai data show instant
+
+        fetch(url.value, {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    image: addimg.value,
+                    name: addname.value,
+                    price: addprice.value,
+                    rating: addrating.value
+                })
+            })
+            .then(function(res) {
+
+                return res.json();
+            })
+            .then(function(data) {
+
+                dubupdating();
+                url.value = "";
+                addimg.value = "";
+                addname.value = "";
+                addprice.value = "";
+                addrating.value = "";
+                addtext.innerText = "😊Added Successfully!!";
+
+                setTimeout(() => {
+                    addtext.innerText = "";
+                }, 3000);
+
+
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
+    } else {
+        addtext.innerText = "Please Select Anyone API server";
+        addtext.style.color = "red";
 
         setTimeout(() => {
             addtext.innerText = "";
         }, 3000);
-    })
-    .catch(function(error){
-        console.log(error);
-    })
-
-    }else if(url.value==="https://projectnewapi.onrender.com/dubai"){
-//dubai data show instant
-
-        fetch(url.value,{
-            method: "POST",
-            headers: {
-                "Content-type":"application/json"
-            },
-            body: JSON.stringify({
-                image: addimg.value,
-                name: addname.value,
-                price: addprice.value,
-                rating: addrating.value
-            })
-        })
-        .then(function(res){
-            
-            return res.json();
-        })
-        .then(function(data){
-            
-            dubupdating();
-            url.value = "";
-            addimg.value = "";
-            addname.value = "";
-            addprice.value = "";
-            addrating.value = "";
-            addtext.innerText = "😊Added Successfully!!";
-
-            setTimeout(() => {
-                addtext.innerText = "";
-            }, 3000);
-
-
-        })
-        .catch(function(error){
-            console.log(error);
-        })
-    }else{
-        addtext.innerText = "Please Select Anyone API server";
-        addtext.style.color = "red";
-
-            setTimeout(() => {
-                addtext.innerText = "";
-            }, 3000);
     }
 });
 
-luckupdate.addEventListener("click",function(){
-    fetch(`${lucknowapi}/${luckid.value}`,{
+luckupdate.addEventListener("click", function() {
+    fetch(`${lucknowapi}/${luckid.value}`, {
         method: "PATCH",
         headers: {
-            "Content-type":"application/json"
+            "Content-type": "application/json"
         },
         body: JSON.stringify({
             image: luckimg.value,
@@ -276,9 +276,9 @@ luckupdate.addEventListener("click",function(){
             price: luckprice.value,
             rating: luckrating.value
         })
-    }).then(function(res){
+    }).then(function(res) {
         return res.json();
-    }).then(function(data){
+    }).then(function(data) {
         fetchdata();
 
         luckid.value = "";
@@ -292,16 +292,16 @@ luckupdate.addEventListener("click",function(){
             lucktext.innerText = "";
         }, 3000);
 
-    }).catch(function(error){
+    }).catch(function(error) {
         console.log(error);;
     })
 })
 
-dubupdate.addEventListener("click",function(){
-    fetch(`${dubaiapi}/${dubid.value}`,{
+dubupdate.addEventListener("click", function() {
+    fetch(`${dubaiapi}/${dubid.value}`, {
         method: "PATCH",
         headers: {
-            "Content-type":"application/json"
+            "Content-type": "application/json"
         },
         body: JSON.stringify({
             image: dubimg.value,
@@ -309,9 +309,9 @@ dubupdate.addEventListener("click",function(){
             price: dubprice.value,
             rating: dubrating.value
         })
-    }).then(function(res){
+    }).then(function(res) {
         return res.json();
-    }).then(function(data){
+    }).then(function(data) {
         dubupdating();
 
         dubid.value = "";
@@ -324,48 +324,48 @@ dubupdate.addEventListener("click",function(){
         setTimeout(() => {
             dubtext.innerText = "";
         }, 3000);
-        
-    }).catch(function(error){
+
+    }).catch(function(error) {
         console.log(error);;
     })
 })
 
-lowtohigh.addEventListener("click",function(){
-    let sorting = empdata.sort(function(a,b){
+lowtohigh.addEventListener("click", function() {
+    let sorting = empdata.sort(function(a, b) {
         return a.price - b.price;
     })
     appenddata(sorting)
 })
 
-hightolow.addEventListener("click",function(){
-    let sorting = empdata.sort(function(a,b){
+hightolow.addEventListener("click", function() {
+    let sorting = empdata.sort(function(a, b) {
         return b.price - a.price;
     })
     appenddata(sorting)
 })
 
-luckdata.addEventListener("click",function(){
+luckdata.addEventListener("click", function() {
     fetchdata();
 })
 
-dubdata.addEventListener("click",function(){
+dubdata.addEventListener("click", function() {
     dubupdating();
 })
 
-function dubupdating(){
+function dubupdating() {
     fetch(dubaiapi)
-    .then(function(res){
-        return res.json();
-    }).then(function(data){
-        console.log(data);
-        appendubai(data);
+        .then(function(res) {
+            return res.json();
+        }).then(function(data) {
+            console.log(data);
+            appendubai(data);
 
-    }).catch(function(error){
-        console.log(error);
-    })
+        }).catch(function(error) {
+            console.log(error);
+        })
 }
 
-function appendubai(element){
+function appendubai(element) {
     container.innerHTML = "";
 
     element.forEach(element => {
@@ -377,7 +377,7 @@ function appendubai(element){
 
 
 
-function createdubai(ele){
+function createdubai(ele) {
 
     let div = document.createElement("div");
     div.id = "box";
@@ -393,7 +393,7 @@ function createdubai(ele){
     let cardbody = document.createElement("div");
     cardbody.id = "card-body";
 
-    let h3= document.createElement("h3");
+    let h3 = document.createElement("h3");
     h3.innerText = ele.name;
 
     let price = document.createElement("p");
@@ -406,7 +406,7 @@ function createdubai(ele){
     edit.id = "edit";
     edit.innerText = "Edit";
 
-    edit.addEventListener("click",function(){
+    edit.addEventListener("click", function() {
         dubid.value = ele.id;
         dubimg.value = ele.image;
         dubname.value = ele.name;
@@ -418,27 +418,27 @@ function createdubai(ele){
     del.id = "delete";
     del.innerText = "Delete";
 
-    del.addEventListener("click",function(){
+    del.addEventListener("click", function() {
         deleted(ele.id);
     })
 
-    cardbody.append(h3,price,rating,edit,del);
+    cardbody.append(h3, price, rating, edit, del);
 
-    div.append(imgdiv,cardbody);
+    div.append(imgdiv, cardbody);
 
     return div;
 }
 
-function deleted(id){
-    fetch(`${dubaiapi}/${id}`,{
+function deleted(id) {
+    fetch(`${dubaiapi}/${id}`, {
         method: "DELETE"
 
-    }).then(function(res){
+    }).then(function(res) {
         return res.json();
-    }).then(function(data){
+    }).then(function(data) {
         dubupdating();
 
-    }).catch(function(error){
+    }).catch(function(error) {
         console.log(error);
     })
 }
