@@ -3,6 +3,9 @@
     padding: 0px;
     margin: 0px;
 }
+html{
+    scroll-behavior:smooth;
+}
 nav {
     display: flex;
     justify-content: space-between;
@@ -39,6 +42,7 @@ nav #right_nav p:hover {
     /* Safari 3-8 */
     transform: scale(1.2);
 }
+
 body{
     padding: 0px;
     margin: 0px;
@@ -204,6 +208,12 @@ body{
     #sorting{
         flex-direction: column;
      }
+     nav #right_nav a:nth-child(2),
+     nav #right_nav a:nth-child(3),
+     nav #right_nav a:nth-child(5)
+     {
+        display: none;
+     }
   }
   @media all and (max-width : 550px){
     .extraBox{
@@ -226,6 +236,13 @@ body{
         flex-direction: column;
         /* border: 1px solid red; */
         margin: auto;
+     }
+     nav #right_nav a:nth-child(1),
+     nav #right_nav a:nth-child(2),
+     nav #right_nav a:nth-child(3),
+     nav #right_nav a:nth-child(5)
+     {
+        display: none;
      }
   }
 

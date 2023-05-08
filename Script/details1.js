@@ -16,6 +16,12 @@ let places = document.querySelector(".Places");
 
 let bookingItem = JSON.parse(localStorage.getItem("booking-item")) || []
 
+let logo = document.getElementById("left_nav");
+
+logo.addEventListener("click",()=>{
+  window.location.href = "index.html";
+})
+
 let images1 = [
     "https://resources.thomascook.in/images/holidays/PKG010078/photos/Dubai1500.jpg",
     "https://resources.thomascook.in/images/holidays/PKG010529/photos/90086_Shaikh_Zayed_Mosque_Abu_Dhabi_1500.jpg",
@@ -120,7 +126,7 @@ function createCard(item){
   // let id = item.id
   btn.addEventListener("click",()=>{
     bookingItem.pop()
-    bookingItem.push(item)
+    bookingItem.push({...item,quantity:1})
     localStorage.setItem("booking-item",JSON.stringify(bookingItem))
 
     window.location.href = "payment.html";
