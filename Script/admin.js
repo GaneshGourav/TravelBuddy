@@ -2,6 +2,10 @@ const lucknowapi = "https://projectnewapi.onrender.com/lucknow";
 const dubaiapi = "https://projectnewapi.onrender.com/dubai";
 
 let container = document.getElementById("right");
+let imgis = document.getElementById("imgis");
+imgis.addEventListener("click",function(){
+    window.location.href = "./index.html";
+})
 
 // For search functionality id here************
 let search_select = document.getElementById("search_select");
