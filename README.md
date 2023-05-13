@@ -10,7 +10,7 @@ TravelBuddy is an easy-to-use platform that allows users to browse different tra
 
 In addition to standard travel packages, TravelBuddy also offers customized tour packages, allowing users to tailor their travel experiences to their preferences. Users can communicate with the TravelBuddy team to create personalized travel packages that include their favorite activities, destinations, and accommodations.
 
-##Team Member :
+## Team Member :
 - Ganesh Kumar
 - Krishna Oza
 - Manikant Kumar
@@ -31,6 +31,10 @@ In addition to standard travel packages, TravelBuddy also offers customized tour
 ## Getting Started :
 
 To run the website, download the project files and open the index.html file in a web browser.
+
+ScreenShot :
+C:\Users\mrgan\OneDrive
+![alt text](C:\Users\mrgan\OneDrive)
 
 ## Deployed Link :
 
