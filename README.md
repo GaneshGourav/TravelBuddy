@@ -32,10 +32,6 @@ In addition to standard travel packages, TravelBuddy also offers customized tour
 
 To run the website, download the project files and open the index.html file in a web browser.
 
-ScreenShot :
-C:\Users\mrgan\OneDrive
-![alt text](C:\Users\mrgan\OneDrive)
-
 ## Deployed Link :
 
 https://travelbuddyunique.netlify.app/
