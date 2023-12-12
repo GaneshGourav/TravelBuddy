@@ -9,7 +9,10 @@ TravelBuddy is a responsive travel website developed by a group of 4 students fo
 TravelBuddy is an easy-to-use platform that allows users to browse different travel packages, view their details, and book them online. The website features a sleek, user-friendly interface that makes navigation a breeze. Users can sign up for an account, which will enable them to access additional features, such as the ability to save their favorite packages and track their bookings.
 
 In addition to standard travel packages, TravelBuddy also offers customized tour packages, allowing users to tailor their travel experiences to their preferences. Users can communicate with the TravelBuddy team to create personalized travel packages that include their favorite activities, destinations, and accommodations.
-
+## Tech Stack
+-HTML
+-CSS
+-Javascript
 ## Team Member :
 - Ganesh Kumar
 - Krishna Oza
